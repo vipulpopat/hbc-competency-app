@@ -1,4 +1,4 @@
-package com.hbc.app;
+package com.hbc.app.exception;
 
 @SuppressWarnings("serial")
 public class CantProcessPreferencesException extends Exception {

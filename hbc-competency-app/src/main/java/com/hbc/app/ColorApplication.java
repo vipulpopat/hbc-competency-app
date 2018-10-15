@@ -1,5 +1,7 @@
 package com.hbc.app;
 
+import java.util.Optional;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -19,8 +21,7 @@ public class ColorApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		String fileName = args[0];
 		ColorProcessor colorProcessor = new InputFileParser(fileName).parseFile();
-		logger.debug("Color Processor = " + colorProcessor);
-		colorProcessor.getBatchCombination();
-
+		Optional<String> result = colorProcessor.getBatchCombination();
+		logger.info("Proposed Batch for Production : " + result.get());
 	}
 }
